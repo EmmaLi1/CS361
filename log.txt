@@ -1,0 +1,33 @@
+﻿17:54:11 kwargs,  {'username': 'user_001'} <class 'dict'>
+17:54:11 debug 1
+17:54:23 kwargs,  {'username': 'user-001'} <class 'dict'>
+17:55:18 kwargs,  {'username': 'user_001'} <class 'dict'>
+17:55:18 kwargs,  {'username': 'user_001'} <class 'dict'>
+17:55:43 debug 3
+17:55:43 kwargs,  {'username': 'user_001'} <class 'dict'>
+17:55:46 kwargs,  {'id': 4} <class 'dict'>
+17:55:46 debug 3
+17:55:46 kwargs,  {'username': 'user_001'} <class 'dict'>
+17:55:49 kwargs,  {'id': 4} <class 'dict'>
+17:55:49 debug 3
+17:55:49 kwargs,  {'username': 'user_001'} <class 'dict'>
+19:07:43 kwargs,  {'username': 'user_001'} <class 'dict'>
+19:07:43 kwargs,  {'username': 'user_001'} <class 'dict'>
+19:07:46 kwargs,  {'username': 'user_001'} <class 'dict'>
+19:11:18 debug 0
+19:11:18 kwargs,  {'username': 'user_001'} <class 'dict'>
+21:32:28 kwargs,  {'id': 1} <class 'dict'>
+21:32:28 debug 0
+21:32:28 kwargs,  {'username': 'user_001'} <class 'dict'>
+21:32:31 kwargs,  {'id': 1} <class 'dict'>
+21:32:31 debug 0
+21:32:31 kwargs,  {'username': 'user_001'} <class 'dict'>
+21:32:32 kwargs,  {'id': 1} <class 'dict'>
+21:32:32 debug 0
+21:32:32 kwargs,  {'username': 'user_001'} <class 'dict'>
+22:34:21 debug 1
+22:34:21 kwargs,  {'username': 'user_001'} <class 'dict'>
+22:34:37 kwargs,  {'id': 2} <class 'dict'>
+22:34:37 debug 1
+22:34:37 kwargs,  {'username': 'user_001'} <class 'dict'>
+22:34:39 kwargs,  {'username': 'user_001'} <class 'dict'>
