@@ -34,5 +34,5 @@ class Todo(Model):
         self.title = form.get('title', '')
         self.completed = False
         self.ct = int(time.time())
-        self.ut = self.ct
+        self.ut = int(time.time())
         self.username = None
