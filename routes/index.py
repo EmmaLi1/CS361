@@ -46,6 +46,10 @@ def login():
         session.permanent = True
         return redirect(url_for('todo.index'))
 
+@main.route("/FUN", methods=['get'])
+def FUN():
+
+    return redirect(url_for(".FUN"))
 
 @main.route("/logout", methods=['get'])
 def logout():

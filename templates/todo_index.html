@@ -4,29 +4,49 @@
     <title>Todo</title>
     <script type="text/javascript" src="{{url_for('static', filename = 'js/image.js')}}"></script>
     <script type="text/javascript" src="{{url_for('static', filename = 'js/timer.js')}}"></script>
+    <script type="text/javascript" src="{{url_for('static', filename = 'js/request.js')}}"></script>
+    <script type="text/javascript" src="{{url_for('static', filename = 'js/saver.js')}}"></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
     <link rel="stylesheet" href={{ url_for( "static",filename="css/pure-min.css" ) }}>
     <link rel="stylesheet" href={{ url_for( "static",filename="css/todo.css" ) }}>
 </head>
 
 <body>
     <div class="center">
-        <img src="{{url_for('static', filename = 'image/pexels-breakingpic-3299.jpg')}}" alt="todo" onload="javascript:ResizeImage(this,500,500)" />
-        <h1>{{ username }}'s Todo</h1>
-        <form method="get" action={ { url_for( ".logout") }}>
-            <button type="submit">Exit</button>
-        </form>
-        <table class="title">
-            <tr>
-                <th>Title</th>
-                <th>How much time you want to spend on this task?</th>
-        </table>
-        <form action={{ url_for( "todo.add") }} method="post">
-            <input type="text" placeholder="Add Todo" name="title">
-            <input type="text" placeholder=" time you want to spend on this task?" name="time">
-            <input class="pure-button pure-button-primary" type="submit" value="Add">
-        </form>
-    </div>
 
+        <h1>{{ username }}'s Todo</h1>
+        <img src="{{url_for('static', filename = 'image/pexels-breakingpic-3299.jpg')}}" alt="todo" onload="javascript:ResizeImage(this,300,500)" />
+
+        <div>
+            <p>Tired? Here's some fun food fact.</p>
+            <button id="Fun" onclick="loadXMLDoc()">Fun</button>
+        </div>
+        <div>
+            <table class="title">
+                <tr>
+                    <th>Title</th>
+                    <th>How much time you want to spend on this task?</th>
+                    <th>How much time you actually spend on this task?</th>
+            </table>
+            <form action={{ url_for( "todo.add") }} method="post">
+                <input type="text" placeholder="Add Todo" name="title">
+                <input type="text" placeholder=" Assumed time?" name="time">
+                <input type="text" placeholder=" Actual time ?" name="time2">
+                <input class="pure-button pure-button-primary" type="submit" value="Add">
+            </form>
+        </div>
+    </div>
+    <div class="box">
+        <span id="hour">00</span>
+        <span>:</span>
+        <span id="min">00</span>
+        <span>:</span>
+        <span id="sec">00</span>
+        <br>
+        <button id="start">start</button>
+        <button id="pause">pause</button>
+        <button id="reset">reset</button>
+    </div>
     <table class="todo-table pure-table pure-table-horizontal pure-table-striped">
         <thead>
             <tr>
@@ -43,27 +63,19 @@
                 <td>{{ t.id }}</td>
                 {% if t.completed %}
                 <td><del><a href={{ url_for('todo.completed',todo_id = t.id) }}>{{ t.title }}</a></del></td>
+                <td><del><a href={{ url_for('todo.completed',todo_id = t.id) }}>{{ t.time }}</a></del></td>
+                <td><del><a href={{ url_for('todo.completed',todo_id = t.id) }}>{{ t.time2 }}</a></del></td>
                 {% else %}
                 <td><a href={{ url_for( 'todo.completed',todo_id=t .id) }}>{{ t.title }}</a></td>
+                <td><a href={{ url_for( 'todo.completed',todo_id=t .id) }}>{{ t.time }}</a></td>
+                <td><a href={{ url_for( 'todo.completed',todo_id=t .id) }}>{{ t.time2 }}</a></td>
                 {% endif %}
-                <td></td>
-                <td><input type="text" placeholder=time name="time"></td>
                 <td><a href={{ url_for( 'todo.delete', todo_id=t.id) }}>delete</a></td>
             </tr>
             {% endfor %}
         </tbody>
     </table>
-    <div class="box">
-        <span id="hour">00</span>
-        <span>:</span>
-        <span id="min">00</span>
-        <span>:</span>
-        <span id="sec">00</span>
-        <br>
-        <button id="start">start</button>
-        <button id="pause">pause</button>
-        <button id="reset">reset</button>
-    </div>
+
 </body>
 
 
